@@ -19,7 +19,7 @@ export function App() {
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
       <NewTransactionModal
-        isOpen={handleOpenNewTransactionModal}
+        isOpen={isNewTransactionModalOpen}
         onRequestClose={handleCloseNewTransactionModal}
       />
       <GlobalStyle />
