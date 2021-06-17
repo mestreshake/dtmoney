@@ -7,6 +7,10 @@ import { Container, TransactionTypeContainer, RadioBox } from "./styles";
 
 export function NewTransactionModal({ isOpen, onRequestClose }) {
   const [type, setType] = useState("deposit");
+
+  function handleCreateNewTransaction(event) {
+    event.preventDefault();
+  }
   return (
     <Modal
       isOpen={isOpen}
@@ -18,7 +22,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }) {
         <img src={closeImg} alt="Fechar modal" />
       </button>
 
-      <Container>
+      <Container onSubmit={handleCreateNewTransaction}>
         <h2>Cadastrar transação</h2>
         <input placeholder="Título" />
         <input type="number" placeholder="Valor" />
