@@ -6,8 +6,6 @@ import totalImg from "../../assets/total.svg";
 import { Container, Card } from "./styles";
 
 export function Summary() {
-  const data = useContext(TransactionsContext);
-  console.log(data);
   return (
     <Container>
       <Card>
