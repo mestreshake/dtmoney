@@ -1,7 +1,7 @@
-import { createContext, useEffect, useState } from "react";
-import { api } from "./services/api";
+import { createContext, useContext, useEffect, useState } from "react";
+import { api } from "../services/api";
 
-export const TransactionsContext = createContext({});
+const TransactionsContext = createContext({});
 
 export function TransactionsProvider({ children }) {
   const [transactions, setTransactions] = useState([]);
@@ -23,4 +23,9 @@ export function TransactionsProvider({ children }) {
       {children}
     </TransactionsContext.Provider>
   );
+}
+
+export function useTransactions() {
+  const context = useContext(TransactionsContext);
+  return context;
 }
